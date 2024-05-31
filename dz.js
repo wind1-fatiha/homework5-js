@@ -10,27 +10,68 @@ input.style.height='50px'
 
 //////////////ДОП ЗАДАНИЕ///////////////
 
-const count=document.getElementById('count')
-const plus=document.getElementById('plus')
-const minus=document.getElementById('minus')
+// const count=document.getElementById('count')
+// const plus=document.getElementById('plus')
+// const minus=document.getElementById('minus')
 
-function str() {
-    if (count>=0, count<50){
-        return True;
-    }
-    }
+// let counter=0
+// count.innerHTML=counter
 
-function plus10(){
-    count.innerHTML= +count.textContent +10
+// plus.addEventListener('click',()=>{
+//     count.innerHTML= +counter.innerText +10
+// });
+
+
+// minus.addEventListener('click',()=>{
+//     count.innerHTML= +counter.innerText -10
+// });
+
+// function organicizer(){
+//     if(counter<1){
+//         document.getElementById('plus').disabled=true
+//     }
+//      else{
+//          document.getElementById('plus').disabled=false
+//     }
+//     if (counter>50) {
+//         document.getElementById('minus').disabled=true
+//     }
+//     else{
+//         document.getElementById('minus').disabled=false
+//     }
+//     organicizer()
+//     }
+    
+
+
+
+document.getElementById('displayTextBtn').addEventListener('click', function() { 
+    const inputText = document.getElementById('textInput').value; 
+    document.getElementById('displayText').textContent = inputText; 
+}); 
+ 
+let counter = 0; 
+const minCounter = 0; 
+const maxCounter = 50; 
+ 
+function updateCounterDisplay() { 
+    document.getElementById('counterValue').textContent = counter; 
 } 
-function minus10() {
-    count.innerHTML= +count.textContent -10
-}
+ 
+document.getElementById('incrementBtn').addEventListener('click', function() { 
+    if (counter < maxCounter) { 
+        counter++; 
+        updateCounterDisplay(); 
+    } 
+}); 
+ 
+document.getElementById('decrementBtn').addEventListener('click', function() { 
+    if (counter > minCounter) { 
+        counter--; 
+        updateCounterDisplay(); 
+    } 
+}); 
+ 
+updateCounterDisplay();
 
-function calculate(callback, callback2){
-    return callback(str,plus10)+" "+callback2(str,min10)
-}
-const num10=calculate(callback)
-const num=calculate(callback2)
-plus.addEventListener('click', num10)
-minus.addEventListener('click', num)
+    
